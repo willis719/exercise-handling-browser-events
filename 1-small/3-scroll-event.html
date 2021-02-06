@@ -7,10 +7,22 @@
 </head>
 <body>
   <!-- HTML goes here -->
+  <h3>Scroll the page and open the dev tools to see the console!</h3>
 
   <script>
     // JavaScript goes here
+    window.addEventListener('scroll', () => {
+      console.log('You Change the size of the Window!')
+    })
 
+    // with debounce
+    let timeout;
+    const delay = 100; //ms to wait before running function
+    window.addEventListener('resize', () => {
+      timeout = setTimeout(() => {
+        console.log('You Change the size of the Window on a debounced callback!')
+      }, delay)
+    })
   </script>
 </body>
 </html>
