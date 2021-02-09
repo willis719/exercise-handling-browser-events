@@ -7,9 +7,21 @@
 </head>
 <body>
   <!-- HTML goes here -->
+  <button id="pressed">Click Me!</button>
 
   <script>
     // JavaScript goes here
+    const button = document.querySelector("#pressed")
+
+    function leftClick(event) {
+      if (button.event === 0) {
+        console.log("You left Clicked")
+      } else {
+        console.log(event)
+      }
+    }
+
+    button.addEventListener("click", leftClick)
 
   </script>
 </body>

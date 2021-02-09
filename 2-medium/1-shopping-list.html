@@ -20,12 +20,24 @@
     <label for="item">Add New Item</label>
     <br>
     <input type="text" name="item" id="item">
-    <button type="submit">Add</button>
+    <button id="add" type="submit">Add</button>
   </form>
 
   <script>
     // JavaScript goes here
-    
+    const button = document.querySelector("#add")
+    const list = document.getElementById("shoppingList")
+    const input = document.getElementById("item")
+
+    function add(event) {
+      event.preventDefault()
+      let newItem = document.createElement("li")
+      newItem.innerText = input.value
+      list.appendChild(newItem)
+      input.value = ""
+    }
+
+    button.addEventListener("click", add)
   </script>
 </body>
 </html>
